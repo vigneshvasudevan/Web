@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance buyer's form</title>
+</head>
+<body>
+    <!-- Insurance buyers form-->
+    <form action="results.html" method="GET" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name</label>
+            <span class="mandatory">*<span>
+            <!-- 'name' attribute is used when sending data in a form on submission -->
+            <!-- element 'id' attrib has to be same as label element 'for'; clicking on the lable will higlight the input text field-->
+            <!-- required will make the field mandatory -->
+            <input type="text" name="Name" id="name" placeholder="Full name without initial"required>
+        </div>
+        <div>
+            <!-- without using label element -->
+            Email
+            <!-- clicking on 'Email' will have no consequence unlike clicking on label -->
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="Mobile">Mobile number</label>
+            <input type="tel" name="Mobile" id="Mobile">
+        </div>
+       
+        <div>
+            Gender
+            <label for="male">Male</label>
+             <!-- All radio boxes should have same name, only then we could restrict selection to one-->
+            <input type="radio" name="gender" id="male" value="male">
+            
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female">
+        </div>
+
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="1" max="100" step="2">
+        </div>
+
+        <div>
+            <label for="date">Birthdate</label>
+            <input type="date" name="date" id="date" min="1922-01-01">
+        </div>
+
+        <div>
+            <label for="Diet">Diet</label>
+            <select name="DietPlans" id="Diet">
+                <option value="Vegan">Vegan</option>
+                <option label="Veg" value="Veg"></option>
+                <option label="Egg" value="Egg"></option>
+                <option label="Non-veg" value="Non-veg"></option>
+            </select>
+        </div>
+
+        <div>
+            <label for ="Edu"> Education </label>
+            <!-- multiple attribute will allow multiple selection-->
+            <select id="Qualification" name="Edu" multiple>
+                <option value = "B.E" > Bachelors in Engineering </option>
+                <!-- select 'masters in engineering by default'-->
+                <option value = "M.E" selected> Masters in Engineering </option>
+            </select>
+        </div>
+
+        <div>
+            <div>
+                <label for="Smoke">Smoking habit</label>
+                <input type="checkbox" name="Smoking habit" id="Smoke">
+                
+                <label for="Alcoholic">Alcoholic</label>
+                <input type="checkbox" name="Alcoholic" id="Alcoholic">
+    
+                <label for="PastIllness">Ever hospitalized for more than 3days</label>
+                <input type="checkbox" name="PastIllness" id="PastIllness">    
+            </div>
+           
+        </div>
+      
+        <div>
+            <label for="PastIllnessInfo">Provide details about past hospitalization</label>
+            <textarea id="PastIllnessInfo" name="PastIllnessInfo" placeholder="Past medical history(if any)"></textarea>
+        </div>
+
+        <div>
+            <label for="eyeColor">Eye Color</label>
+            <input type="color" name="eyeColor" id="eyeColor">
+        </div>
+      
+        <div>
+            <label for="photo">Photo</label>
+            <!-- Accept any image-->
+           <input id="photo" type="file" name="photo" accept="image/*" size=1024>
+        </div>
+
+        <div>
+            <label for="Signature">Signature</label>
+            <!-- Accept only .png-->
+            <input id="Signature" type="file" name="Signature" accept=".png">
+        </div>
+
+        <div>
+            <label for="DocReport">Doctor report</label>
+            <!-- Accept one or more of pdf, excel files, .csv-->
+            <input id="DocReport" type="file" name="DocReport" accept="application/pdf,application/vnd.ms-excel,.csv" multiple>
+        </div>
+     
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
