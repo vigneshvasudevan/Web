@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Static position</title>
+    <style>
+        .parent {
+            width:50%; /* 50% of parent, here 'body' element */
+            height: 200vh; /* 200% or 2times of view port height */
+            color: white;
+            background-color:brown;
+          }
+          
+          .child1 {
+            width:100%; /* 100% of parent here 'div' element with class name ="parent" */
+            height: 100px;
+            background-color:blue;
+          }
+          
+          .child2 {
+            width:100%; /* 100% of parent here 'div' element with class name ="parent" */
+            height: 100px; 
+            background-color:red;
+          
+          }
+          
+          .child3 {
+            width: 100%; /* 100% of parent, here 'div' element with class name ="parent" */
+            height: 100px;
+            background-color:grey;
+          }
+    </style>
+</head>
+<body>
+    <!-- By default all elements will be postioned in the order it is kept in html-->
+    <!-- Default postion value is static-->
+    <!-- Here parent element will contain the child1, child2, child3-->
+   
+    <div class="parent">
+        Parent
+        <!-- Child1 will be the first element to be seen followed by 'parent' content-->
+        <div class="child1">
+            Child1
+        </div>
+        <!-- Child2 will be the seen only after Child1-->
+        <div class="child2">
+            Child2
+        </div>
+        <!-- Child3 will be the seen only after Child2-->
+        <div class="child3">
+            Child3
+        </div>
+    </div>
+</body>
+</html>
