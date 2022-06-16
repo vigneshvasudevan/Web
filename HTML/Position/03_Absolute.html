@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding absolute position</title>
+    <style>
+        .parent1 {
+          width:50%;
+          height: 100vh;
+          padding:0px;
+          color: white;
+          position:relative;
+          background-color:brown;
+        }
+
+        .parent2 {
+          width:50%;
+          height: 100vh;
+          padding:0px;
+          color: white;
+          position:static;
+          background-color:brown;
+        }
+          
+        .child1 {
+          width:100%;
+          height: 100px;
+          padding:0px;
+
+          /* Element will be placed absolutely from the 
+          ancestor element. It looks for ancestor who's 
+          position is non-static, if no non-static 
+          ancestor is found it will be placed at the root
+          element i.e <html> 
+          
+          Child 1 of Parent 1 will placed absolutely from 
+          Parent1 where as Child 1 of Parent 2 will placed 
+          absolutely from root element i.e<html>
+
+          Note: Child 2 of both parent1 & 2 will be rendered
+          as if Child1 is not found. 
+
+          In other words child 2 both parent1 & 2 will be rendered
+          right after the Parent div content
+
+          
+          */
+         
+          position: absolute;  
+          top:50px;
+          background-color:blue;
+        }
+        .parent2 .child1{
+            top:100px;
+            background-color:green;
+            opacity:0.5;
+        }
+          
+        .child2 {
+          width:100%;
+          height: 100px;
+          top:5px;
+          background-color:red;
+        }
+        
+        .child3 {
+          width:100%;
+          height: 100px;
+          background-color:grey;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="parent1">
+    Parent1
+
+    <!-- Child1 will be placed -->
+    <div class="child1">
+        Child 1 of parent 1
+    </div>
+    <div class="child2">
+      Child 2 of parent 1
+    </div>
+    <div class="child3">
+      Child 3 of parent 1
+    </div>
+  </div>
+
+  <div class="parent2">
+    Parent2
+    <div class="child1">
+        Child 1 of parent 2
+    </div>
+    <div class="child2">
+      Child 2 of parent 2
+    </div>
+    <div class="child3">
+      Child 3 of parent 2
+    </div>
+  </div>
+
+</body>
+</html>
