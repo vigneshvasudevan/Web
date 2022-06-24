@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defer</title>
+</head>
+
+    <p>...content before scripts...</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => alert("DOM ready!"));
+    </script>
+
+    <script defer src="https://javascript.info/article/script-async-defer/long.js"></script>
+    <script defer src="https://javascript.info/article/script-async-defer/small.js"></script>
+
+    <p>...content after scripts...</p>
+    
+</body>
+</html>
