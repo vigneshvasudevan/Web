@@ -93,4 +93,5 @@ switch (new Date().getDay()) {
 
 /* Thing to try:
     1. Given a year, check if it's leap year or not
+    2. Given a number, check if it's prime number or not
 */

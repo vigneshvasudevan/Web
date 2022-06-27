@@ -1,6 +1,6 @@
 // Primitive type are by default deep copied
-const x = 10;
-y = x;
+let x = 10;
+let y = x;
 y = 20;
 console.log('x = ', x);
 console.log('y = ', y);

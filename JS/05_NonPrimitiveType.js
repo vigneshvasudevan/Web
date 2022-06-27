@@ -173,6 +173,22 @@ console.log(object1 === object2);  // false
 console.log(object1 === object1);  // true
   
 
+// Diff b/w maps and object
+let x = {'foo': 100};
+let y = {'bar' : 200};
+let z = {};
+z[x] = 'FirstValue';
+z[y] = 'SecondValue';
+console.log(z[x], z[y]); 
+// Output : SecondValue SecondValue
+// Here x, y are objects and it can't be used as keys for another object i.e Z
+
+// Let's try the same using map
+let myMap = new Map();
+myMap.set(x, 'FirstValue');
+myMap.set(y, 'SecondValue');
+console.log(myMap.get(x), myMap.get(y)); 
+// Output : FirstValue SecondValue
 
 
 // 3. regex object
@@ -202,7 +218,7 @@ Things to ponder:
 
 /* Things to try:
 1. Replace all occurrence of a string having 'bangalore' to 'bengaluru'
-
+2. Write a regex to validate mobile number
 */
 
 
