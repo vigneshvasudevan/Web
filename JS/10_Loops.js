@@ -5,7 +5,7 @@ Do something over and over and again.
 Syntax for loops:
     1. For
 
-    for (intializer; LoopEndcondition; counter) {
+    for (initializer; LoopEndcondition; counter) {
         // code block to be executed
     }
     e.g
@@ -33,8 +33,11 @@ Syntax for loops:
 
         - simple while
         Syntax:
+            initializer
             while (condition) {
                 // code block to be executed
+
+                // optionally increment 
             }
 
         Difference b/w do-while and while:
@@ -52,12 +55,12 @@ for(let i = 0; i < x.length ; ++ i) {
 
 let j = 0;
 while (j < x.length) {
-    console.log(x[i]); 
-    ++i;
+    console.log(x[j]); 
+    ++j;
 }
 
 for(let i of x) {
-    console.log(j); 
+    console.log(i); 
 }
 
 //Iterating over array
@@ -118,6 +121,8 @@ for (let i = 0; i <numbers.length; ++i) {
 
 /*
 Things to try: 
-    1. Find all prime numbers from 1 to 1000
-
+    1. Count the vowels and constants in a given string
+    2. Given a number 'n', find all numbers starting from 1 until 'n' which is divisble by 6 but not 4
+    3. Given a number, check if it's prime or not
+    4. Given a number 'n', find all prime numbers starting from 1 until 'n'
 */
