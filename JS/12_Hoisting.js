@@ -40,13 +40,13 @@ variable in code before it is declared and/or initialized.
 console.log(num); // Returns 'undefined' from hoisted var declaration not 1
 var num; // Declaration
 num = 1; // Initialization
-console.log(num); // Returns 6 after the line with initialization is executed.
+console.log(num); // Returns 1 after the line with initialization is executed.
 
 
 
 console.log(num2); // Returns 'undefined' from hoisted var declaration (not 2)
 var num2 = 2; // Initialization and declaration.
-console.log(num2); // Returns 6 after the line with initialization is executed.
+console.log(num2); // Returns 2 after the line with initialization is executed.
 
 
 // If we forget the declaration altogether (and only initialize the value) the 
@@ -68,9 +68,3 @@ console.log(num4); // Throws ReferenceError exception as the variable value is u
 let num4 = 4; // Initialization
 
 
-'use strict';
-var foo = "foo1";
-var foo = "foo2"; // No problem, 'foo1' is replaced with 'foo2'.
-
-let bar = "bar1"; 
-let bar = "bar2"; // SyntaxError: Identifier 'bar' has already been declared

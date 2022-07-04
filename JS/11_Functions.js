@@ -211,7 +211,7 @@ console.log(IsOdd(100));
 // Note:
 // 1. By default when it's one args now need to put () to capture arg 
 // 2. when it is just one statement in side {} the return is implict, no need to say return
-const IsEven = num => { num%2 == 0}
+const IsEven = num => num%2 == 0;
 console.log(IsEven(100));
 
 
@@ -220,7 +220,44 @@ console.log(IsEven(100));
 const numbers= [1,2,3,4,5];
 let doubled  = numbers.map(n => n * 2);
 console.log(doubled); // [2,4,6,8,10]
-var greaterThan3 = numbers.filter(n => n > 3);
+let greaterThan3 = numbers.filter(n => n > 3);
 console.log(greaterThan3); // [4,5]
 let sumOfAll = numbers.reduce((sum, curVal) => curVal + sum);
 console.log(sumOfAll) // 15
+
+/*
+How map, reduce, filter function works internally?
+
+class Array {
+    this._array = {};
+    function map(callbackFunction) {
+        const ans = [];
+        for(let i = 0; i<this._array.length; ++i) {
+            ans.push(callbackFunction(this._array[i]));
+        }
+        return ans;
+    }
+
+    function filter(callbackfunction) {
+        const ans = [];
+        for(let i = 0; i<this._array.length; ++i) {
+            if callbackFunction(this._array[i]) {
+                ans.push(this._array[i]);
+            }
+        }
+        return ans;
+    }
+
+
+    function reduce(callbackfunction) {
+        let ans = undefined;
+        for(let i = 0; i<this._array.length; ++i) {
+            ans = callbackfunction(ans, this._array[i]);
+        }
+        return ans;
+
+    }
+
+}
+
+*/
