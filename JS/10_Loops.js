@@ -89,12 +89,12 @@ const fruitBasket = new Map([
   ]);
 
 for (const entry of fruitBasket.entries()) {
-    console.log(entry)
+    console.log(entry);
 }
 
 fruitBasket.forEach (function(value, key) {
     console.log(key, value)
-})
+});
 
 
 // Iterating over objects

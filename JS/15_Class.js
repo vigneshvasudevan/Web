@@ -1,7 +1,7 @@
 /*
 
 What is a Class?
-Classes are a template or blueprint for creating objects. They encapsulate data with code to work on that data. 
+Class is a template or blueprint for creating objects. They encapsulate data with code to work on that data. 
 
 Why do we need class?
 Class is the basic element of Object oriented paradigm
@@ -16,13 +16,12 @@ Classes in JS are built on prototypes but also have some syntax and semantics th
 // Creating objects
 const person = {
     name: ['Bob', 'Smith'],
-    age: 32,
     introduceSelf() {
       console.log(`Hi! I'm ${this.name[0]}.`);
     }
 };
 
-person.age;
+person.name;
 person.bio();
 
 
@@ -30,12 +29,12 @@ person.bio();
 // Adding property on the fly to object
 const object1 = {};
 Object.defineProperty(object1, 'property1', {
-  value: 42,
+  foo: 42,
   writable: false
 });
 
 
-// Factory to produce more person
+// Factory method/function to produce person
 function createPerson(firstName, lastName) {
     const obj = {};
     obj.firstName = firstName;
@@ -255,25 +254,18 @@ class Person {
     introduceSelf() {
       console.log(`Hi! I'm ${this.name}`);
     }
-  
-  }
+}
 
 class Professor extends Person {
     teaches;
     constructor(name, teaches) {
-      super(name); //class parent constructor
+      super(name); //class parent i.e 'Person' constructor
       this.teaches = teaches;
     }
   
     introduceSelf() {
       console.log(`My name is ${this.name}, and I will be your ${this.teaches} professor.`);
     }
-  
-    grade(paper) {
-      const grade = Math.floor(Math.random() * (5 - 1) + 1);
-      console.log(grade);
-    }
-  
 }
   
 
@@ -284,17 +276,17 @@ And a class may extend only one other class.
 
 let sayHiMixin = {
     sayHi() {
-      alert(`Hello ${this.name}`);
+      console.log(`Hello ${this.name}`);
     },
     sayBye() {
-      alert(`Bye ${this.name}`);
+      console.log(`Bye ${this.name}`);
     }
 };
   
 // usage:
 class User extends Person{
     constructor(name) {
-        this.name = name;
+        super(name);
     }
 }
   
