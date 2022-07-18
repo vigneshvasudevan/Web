@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>AJAX using vanilla JS</title>
+    <style>
+        #user {
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="users"></div>
+    <div id="file"></div>
+
+    <button id="getGitUser">Get 5 github users</button>
+    <button id="readFromFile">Read foo.txt file from local machine</button>
+    
+
+    <script type="text/javascript">
+        
+        // Adding button event listeners
+        getUsersButton = document.getElementById("getGitUser")
+        getUsersButton.addEventListener('click', () => {
+            //console.log("Get git-hub users button clicked");
+
+            // hide the button when clicked
+            getUsersButton.style.display = 'none';
+
+            // Create XMLHttpRequest 
+            let xhr = new XMLHttpRequest();
+            // Initiate Connection  
+            const url = 'https://api.github.com/users';
+            xhr.open("GET", url, true);
+
+            // function will execute after request is successful 
+            xhr.onreadystatechange = function () {
+                // Http response code 200 = Ok
+                if (this.readyState == 4 && this.status == 200) {
+                    // console.log(this.responseText);
+                    let users = JSON.parse(this.responseText);
+                    var dom = '';
+                    // load only 5 users 
+                    for (let i = 0; i < 5; i++) {
+                        dom += '<div class=user>' +
+                            '<img src="'+ users[i].avatar_url +'"'+ ' width="50px" '+
+                            'height="50px">' +
+                            '<ul>' +
+                                '<li>'+ users[i].login + '</li>' +
+                                '<li>'
+                                    + '<a href='+ users[i].url + '</a>'
+                                '</li>' +
+                            '</ul>'+
+                            '</div>';
+                    }
+                    document.getElementById("users").innerHTML = dom;
+                }
+            }
+            // Send request 
+            xhr.send();
+        });
+
+        document.getElementById("readFromFile").addEventListener('click', () => {
+            console.log("Read from file");
+            
+            // Create XMLHttpRequest 
+            let xhr = new XMLHttpRequest();
+
+            // For this to work you need to provide file access to your browser
+            // or host this page in server
+            xhr.open("GET", "../../logs/foo.txt", true);
+
+            // function will execute after request is successful 
+            xhr.onload = (() => {
+                if (this.status == 200) {
+                    console.log(this.responseText);
+                    //document.getElementById("file").innerText = this.responseText;
+            
+                }
+            }); 
+            // Sending our request 
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
