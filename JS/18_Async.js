@@ -95,13 +95,13 @@ let p2 = getPromise(invalidURL);
 p2.then(function(value) {
     console.log(value); // "Success!"
     throw new Error('oh, no!');
-  }).catch(function(e) {
+}).catch(function(e) {
     console.error(e.message); // "oh, no!"
-  }).then(function(){
+}).then(function(){
     console.log('after a catch the chain is restored');
-  }, function () {
+}, function () {
     console.log('Not fired due to the catch');
-  });
+});
 
 // alternate way to handle promise rejection
 p2.catch(error => console.log(error));
@@ -166,10 +166,8 @@ async function f() {
     let promise = new Promise((resolve, reject) => {
         setTimeout(() => { alert('Resolving');resolve("done!")}, 1000)
     });
-
     alert('Starting');
     let result = await promise; // wait until the promise resolves (*)
-
     alert(result); // "done!"
 }
 

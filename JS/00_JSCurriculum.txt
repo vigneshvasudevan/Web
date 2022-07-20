@@ -1,0 +1,113 @@
+################
+Course syllabus
+################
+
+------------------------
+Introduction to JS
+------------------------
+    What is JS?
+    How is JS and HTML related?
+    Different way to have JS and HTML connected with pros and collections
+
+------------------------
+Basics of JS
+------------------------
+    Variable
+    Data types and duck typing
+    Primitive data types
+    Non-Primitive data types
+    Global properties
+    Operators
+    Shallow copy vs deep copy
+
+-----------------------
+conditional statements:
+-----------------------
+    if-else
+    nested if-else
+    switch-case
+    if-else vs switch case
+
+-----------------------
+Loops:
+-----------------------
+    why loops?
+    For, while and do-while loops syntax
+    keywords: break, continue
+    Different ways to iterate over array, sets, map, strings
+    
+-----------------------
+Function:
+-----------------------
+    Why function?
+    Function syntax
+    Function accepting argument and return value
+    Variable length argument functions with and without Spread operator(...)
+    closures
+    'this'
+    call, bind, apply
+    arrow function
+    
+
+-----------------------
+Modules:
+-----------------------
+    Hoisting
+    var vs let
+    importing and exporting modules
+    
+-----------------------
+Class:
+-----------------------
+    modules vs ES6 classes
+    Constructor
+    Getters and setters
+    Inheritance (using _prototype_)
+    Mixins
+
+-----------------------
+Exception handling
+-----------------------
+    what is an exception?
+    try-catch-finally
+
+
+-----------------------
+Dom manipulation:
+-----------------------
+   DOM selectors
+   DOM event listeners
+   innerHtml vs innertText vs TextContext
+
+
+-----------------------
+Async part in JS:
+-----------------------
+    Why we need asynchoronous behavior?
+    callback functions
+    Web API
+    promises
+    async & await
+
+-----------------------
+AJAX
+-----------------------
+    why AJAX ?
+    how does AJAX work?
+    CRUD operation using xhr
+
+
+-----------------------
+Advanced web topics
+-----------------------
+    Module loading(using AMD)
+    Injections
+        - Cross site scripting(XSS)
+        - Avoiding XSS
+
+
+
+
+    
+
+
