@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>AMD</title>
+    
+</head>
+<body>
+    <p> 
+        AMD waits for HTML parsing to complete and executes/loads JS in the order they are used, not in the order they are seen in HTML
+        <br>
+        Observe console in dev tools for logs
+    </p>
+    <p id="foo"> 
+    </p>
+
+
+   
+       
+    <!-- First JS to be loaded   -->
+    <script src="src/lib/dojo.js" data-dojo-config="async: true"></script>
+    <!-- Entry point to the application   -->
+    <script>
+        require(['src/entrypoint.js'], function() {
+            console.log("Entry point JS");
+        });
+    </script>
+
+</body>
+</html>
