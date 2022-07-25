@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Accessing JS when it is not loaded</title>
+    <script src="calc.js"></script>
+    <script src="add.js"></script>
+    <script src="sub.js"></script>
+    <script src="mul.js"></script>
+    <script src="square.js"></script>
+    <script src="div.js"></script>
+
+</head>
+<body>
+    <p id="foo"> 
+        Open console tab in browser dev tools to see the error, 
+        <br> Square function is trying to manipulate dom even before dom is created
+    </p>
+
+   
+    
+</body>
+</html>
