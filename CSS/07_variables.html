@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+
+    <style>
+
+        /* root selector will work with older browser otherwise 'html' is just fine */
+        :root{
+            --COLOR: rgb(41, 90, 179);
+            --SPACE: 10px;
+        }
+        h1{
+            color: var(--COLOR);
+            border-bottom: var(--SPACE) solid var(--COLOR);
+        }
+        p{
+            color: var(--COLOR);
+        }
+    </style>
+</head>
+<body>
+    <!-- Introduced to avoid different parts of the website looking aesthetically different -->
+    <!-- Preprocessors like Saas were built to solve this problem. modern css3 supports this out of the box-->
+
+    <header>
+        <h1>CSS Variables</h1>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt suscipit, harum repellat ex esse amet fugiat. Quisquam ipsum perferendis tenetur iste incidunt omnis, unde. Soluta sed aliquid, ad eveniet!</p>
+        <p style="--COLOR: salmon">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum ab excepturi fuga voluptates odio accusamus eligendi, nostrum distinctio numquam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt suscipit, harum repellat ex esse amet fugiat. Quisquam ipsum perferendis tenetur iste incidunt omnis, unde. Soluta sed aliquid, ad eveniet!</p>
+        
+    </main>  
+    
+    <!-- Changing the property value from JS s-->
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            setTimeout(() => {
+                let html = document.documentElement;
+                html.style.setProperty('--COLOR', 'red');
+            }, 5000);
+        })
+    </script>
+</body>
+</html>

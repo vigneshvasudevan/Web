@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+
+        p {
+            color : Purple;
+        }
+      
+        .container1 {
+            width : 200px;
+            height : 200px;
+            border : 2px solid black;
+            position: relative;
+            top: 10px;
+            margin: 20px auto;
+        }
+      
+        .box1, .box2, .box3 {
+            width : 50%;
+            height : 50%;
+            position: absolute;
+        }
+      
+        .box1, .box3{
+            background-color: red;
+            top : 20%;
+            left : 10%;
+        }
+      
+        .box2 {
+            background-color: blue;
+            top : 50%;
+            left : 50%;
+        }
+      
+        .box3 {
+            z-index : 1;
+        }
+      
+      
+        .top,
+        .bottom {
+            width: 250px;
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .inner {
+            padding: 20px;
+        }
+        
+        .bottom {
+            z-index: 2;
+            margin-top: -90px;
+            opacity: 0.8;
+            box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+        }
+        
+        .top {
+            z-index: 1;
+            background: aliceblue;
+            border: 2px solid darkblue;
+        }
+        
+        .bottom {
+            background: pink;
+            border: 2px solid hotpink;
+        }
+        
+        .inner {
+            background: wheat;
+            border: 2px solid gold;
+        }
+        
+        .top > .inner {
+            z-index: 100;
+        }
+        
+        .bottom > .inner {
+            z-index: 2;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <p>
+        Z-index works on non static elements and it takes both -ve and +ve values. <br>
+        Note: If elements that overlap do not have z-index specified then that element will show up that is mentioned last in document.
+    </p>
+
+    <div class="container1">
+        In normal flow blue box will appear above red
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <div class="container1">
+        Using z-index to show red box above blue box
+        <div class="box3"></div>
+        <div class="box2"></div>
+    </div>
+
+
+    <div class="top">
+        z-index: 1
+        <div class="inner">
+            z-index: 100
+        </div>
+    </div>
+    
+    <div class="bottom">
+        z-index: 2
+        <div class="inner">
+            <code>z-index: 2</code>
+        </div>
+    </div>
+
+    <div>
+        When two region overlap the parent/container z-index is used to determine which one comes on top<br>
+        Here z-index=2 on overlap with blue box, but it comes on top since blue has z-index as 1
+    </div>
+
+    <div class="todo" style="color:red">
+        <br>
+        <br>
+        To do: Have a image, overlap the image with a caption
+    </div>
+</body>
+</html>

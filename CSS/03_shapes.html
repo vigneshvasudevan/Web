@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different shapes using css</title>
+    <style>
+        .rect {
+            width : 250px;
+            height : 250px;
+            border : 2px solid blue;
+            margin : 25px auto;
+        }
+        .rounded {
+            padding : 20px;
+
+            /*
+                when 4-values specified: top left, top right, bottom right, bottom left
+                when 3-values specified: first applies to top-left, 2nd applies to top-right and also bottom-left, 3rd applies to bottom right
+                when 2-values specified: first applies to top-left and bottom-right corner, the second applies to top-right and bottom-left corner
+                when 1-value is specified: same radius applied to all 4 corners
+            */
+            border-radius : 10%; /* 10% of content size i.e 25px; draws a imaginary square at the corners(size 20px) and draws the cricle from the square's center*/
+            border-width : 10px;
+            border-color : purple;
+        }
+        .roundedTopLeftBottomRight {
+            padding : 20px;
+            border-radius : 20% 0%; /* first value = top left, bottom right; second value = top right, bottom left */
+            border-width : 10px;
+            border-color : orange;
+        }
+
+        .rectUsingHrVertRadii {
+            border-radius : 30px/100px; /* horizontal radius / vertical radius; draws 4 rect of size 30px*100px at all 4 corners and inscribes a cricle within that rectangle*/
+        }
+
+        .advRadii {
+            border-radius : 30px 40px 50px 80px /10px 20px 60px 70px; /* horizontal radius / vertical radius; draws 4 rect 30*10px (top left), 40*20px (top right), 50*60px (bottom right), 80*70px (bottom left) respectively and inscribes a cricle within that rectangle*/
+        }
+
+        .circle {
+            border : 2px solid red;
+            border-radius : calc(100%)/calc(100%);
+        }
+
+        .ellipseInXDir, .ellipseInYDir {
+            border-top-left-radius : 50% 50%;
+            border-top-right-radius : 50% 50%;
+            border-bottom-right-radius : 50% 50%;
+            border-bottom-left-radius : 50% 50%;
+        }
+        .ellipseInXDir {
+            height : 25px;
+            border : 2px solid Green;
+        }
+            
+        .ellipseInYDir {
+            width : 25px;
+            border : 2px solid darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rect">Rectangle with sharp edges</div>
+    <div class="rect rounded">Rectangle with rounded 4edges</div>
+    <div class="rect roundedTopLeftBottomRight">Rectangle with rounded top left and bottom right</div>
+    <div class="rect rectUsingHrVertRadii">Rectangle with horizontal & vertical radii</div>
+    <div class="rect advRadii">Rectangle with radii</div>
+
+
+    <div class="rect circle"></div>
+    <div class="rect ellipseInXDir"></div>
+    <div class="rect ellipseInYDir"></div>
+
+
+    <div class="triangle top"></div>
+    <div class="triangle right"></div>
+    <div class="triangle bottom"></div>
+    <div class="triangle left"></div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        
+        img {
+            width : 75px;
+            height : 75px;
+        }
+        .bar img{
+            float: left;
+        }
+
+        .bar, .bar2 {
+            background-color: yellow;
+        }
+
+        .baz img{
+            float: right;
+        }
+
+        .bar2 {
+            clear: right; /* to avoid image spilling over next paragraph; use overflow: auto otherwise at baz*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="foo">
+            <!-- Image being inline-block element, paragraph content in push away-->
+            <img src="../Resources/googleImage.jpeg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque magnam maxime explicabo inventore ad aperiam itaque. Atque impedit iure quidem sunt necessitatibus velit sint sed recusandae voluptatibus quo ex adipisci ut labore, aspernatur ipsam corporis nulla iste nisi expedita voluptatem quos quis cumque! Odit alias ullam, labore, reprehenderit soluta commodi consequatur dolor, cumque voluptate nam id doloribus praesentium molestias. Minus, exercitationem debitis delectus mollitia repudiandae amet minima eveniet et. Eaque odit quis ratione eius culpa qui, expedita labore veritatis iusto repellendus nisi necessitatibus sapiente esse tempora ullam alias? Repellendus, cumque aut. Consequatur quos suscipit ipsa voluptas ipsam facilis minus earum?
+        </p>
+
+        <p class="bar">
+            <!-- Using float property to show the paragraph content beside image-->
+            <img src="../Resources/googleImage.jpeg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque magnam maxime explicabo inventore ad aperiam itaque. Atque impedit iure quidem sunt necessitatibus velit sint sed recusandae voluptatibus quo ex adipisci ut labore, aspernatur ipsam corporis nulla iste nisi expedita voluptatem quos quis cumque! Odit alias ullam, labore, reprehenderit soluta commodi consequatur dolor, cumque voluptate nam id doloribus praesentium molestias. Minus, exercitationem debitis delectus mollitia repudiandae amet minima eveniet et. Eaque odit quis ratione eius culpa qui, expedita labore veritatis iusto repellendus nisi necessitatibus sapiente esse tempora ullam alias? Repellendus, cumque aut. Consequatur quos suscipit ipsa voluptas ipsam facilis minus earum?
+        </p>
+
+        <p class="baz">
+            <!-- Using float property to show the paragraph content beside image-->
+            <img src="../Resources/googleImage.jpeg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, modi molestiae? Rem vel accusamus quam temporibus quibusdam officiis animi debitis perferendis repellat dolorem minima, quasi assumenda consectetur nisi accusantium natus?
+        </p>
+
+        <p class="bar2">
+            <!-- Using float property to show the paragraph content beside image-->
+            <img src="../Resources/googleImage.jpeg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque magnam maxime explicabo inventore ad aperiam itaque. Atque impedit iure quidem sunt necessitatibus velit sint sed recusandae voluptatibus quo ex adipisci ut labore, aspernatur ipsam corporis nulla iste nisi expedita voluptatem quos quis cumque! Odit alias ullam, labore, reprehenderit soluta commodi consequatur dolor, cumque voluptate nam id doloribus praesentium molestias. Minus, exercitationem debitis delectus mollitia repudiandae amet minima eveniet et. Eaque odit quis ratione eius culpa qui, expedita labore veritatis iusto repellendus nisi necessitatibus sapiente esse tempora ullam alias? Repellendus, cumque aut. Consequatur quos suscipit ipsa voluptas ipsam facilis minus earum?
+        </p>
+    </div>
+</body>
+</html>

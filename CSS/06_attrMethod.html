@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attr method</title>
+    <style>
+
+        /* Using attr method to get built-in & custom/user defined attribute value */
+        p::before {
+            content : attr(title) " ";
+        }
+        p::after {
+            content : attr(data-customAttr) " ";
+        }
+
+        p {
+            width : attr(data-font px); /* Not all browsers supports this */
+            height : attr(data-font px);
+            border : 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p title = "section1" data-font="300" data-customAttr="foo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ullam.</p>
+</body>
+</html>
