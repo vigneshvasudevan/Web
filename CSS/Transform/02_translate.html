@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform translate</title>
+
+    <style>
+        .foo, .bar {
+            width : 200px;
+            height: 200px;
+            margin: 25px;
+            border: 2px solid black;
+            
+        }
+
+        .foo {
+            background-color: blue;
+            transform: translate(50px, -20px); /* 50px to the right; 100px to the top */
+        }
+
+        .bar {
+            background-color: red;
+            transform: translate(-20px, 20px); /* 50px to the left; 100px to the bottom */
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--moves an element from its current position (according to the parameters given for the X-axis and the Y-axis-->
+    <div class="foo"></div>
+    <div class="bar"></div>
+
+</body>
+</body>
+</html>
