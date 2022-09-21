@@ -61,6 +61,43 @@
             border : 2px solid darkblue;
         }
 
+        .fourTriangle, .triangle {
+            width : 0px;
+            height: 0px;
+            margin: 20px;
+        }
+
+        .fourTriangle {
+            border-top: 50px solid green;
+            border-left: 50px solid black;
+            border-right: 50px solid blue;
+            border-bottom: 50px solid red; 
+        }
+
+        .top {
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid red; 
+        }
+
+        .right {
+            border-top: 50px solid transparent;
+            border-left: 50px solid blue;
+            border-bottom: 50px solid transparent; 
+        }
+
+        .bottom {
+            border-top: 50px solid green;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+
+        .left {
+            border-top: 50px solid transparent;
+            border-right: 50px solid blue;
+            border-bottom: 50px solid transparent; 
+        }
+
     </style>
 </head>
 <body>
@@ -76,6 +113,7 @@
     <div class="rect ellipseInYDir"></div>
 
 
+    <div class="fourTriangle"></div>
     <div class="triangle top"></div>
     <div class="triangle right"></div>
     <div class="triangle bottom"></div>

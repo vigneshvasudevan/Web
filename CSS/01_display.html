@@ -24,6 +24,13 @@
         .inline.block {
             display : inline-block;
         }
+
+        #magic {
+            width: 150px;
+            height: 150px;
+            margin : 20px, auto;
+            border: 2px solid red;
+        }
     </style>
 
 </head>
@@ -43,5 +50,17 @@
         </span>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, possimus perspiciatis! Alias beatae assumenda eius!
     </div>
+
+    <div id="magic">
+        I will vanish if you click me<br> <em></em>(using diplay:none)</em>
+    </div>
+
+    <script>
+        let foo = document.getElementById("magic");
+        foo.addEventListener("click", (evt) => {
+            evt.target.style.display = "none";
+        });
+    </script>
+    
 </body>
 </html>
