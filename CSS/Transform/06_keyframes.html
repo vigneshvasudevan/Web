@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform & Keyframes</title>
+    <style>
+        .foo {
+            display: inline-block;
+            background-color: #aaaaaa;
+            height: 100px;
+            width: 100px;
+            transform: skew(20deg);
+            font-size: 1px;
+            padding: 1px;
+            color: white;
+            margin-right: 5px;
+            margin-left: 5px;
+            animation: shake 2s infinite;
+            animation-direction: alternate;
+        }
+          
+        @keyframes shake {
+            0% {
+              transform: skewY(20deg);
+            }
+            100% {
+              transform: skewY(-20deg);
+            }
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="foo"></div>
+    <div class="foo"></div>
+    <div class="foo"></div>
+</body>
+</html>

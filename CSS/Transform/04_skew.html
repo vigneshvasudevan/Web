@@ -6,17 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transform skew</title>
     <style>
-        .foo {
+
+        .result {
+            width: 300px;
+            height : 300px;
+            border: 2px solid black;
+            margin: 10px auto;
+        }
+        #skewAnimation {
+            width: 30%;
+            height: 30%;
+            margin: 10px auto;
+            background-color: orange;
+            animation: skewing 20s infinite;
+        }
+        @keyframes skewing {
+            0%  { transform: skew(0deg);}
+            10% { transform: skew(36deg);}
+            20% { transform: skew(72deg);}
+            30% { transform: skew(109deg);}
+            40% { transform: skew(144deg);}
+            50% { transform: skew(180deg);}
+            60% { transform: skew(216deg);}
+            70% { transform: skew(252deg);}
+            80% { transform: skew(288deg);}
+            90% { transform: skew(324deg);}
+            100%{ transform: skew(360deg);}
+        }
+            
+        @keyframes skewing-toggle {
+            0%  { opacity: 1;}
+            20% { opacity: 0;}
+            100%{ opacity: 0;}
+        }
+
+
+        .common {
             width : 200px;
             height: 200px;
             border: 2px solid black;
-            background-color: blue;
             margin : 50px auto;
-            transform: skew(-40deg);
+        }
+        .foo {
+            background-color: blue;
+            transform: skew(40deg); /* pulls the box from all 4 corners */
+        }
+
+        .bar {
+            background-color: rgb(0, 255, 106);
+            /* when skewY is +ve deg, it pulls the top right below and bottom right above */
+            /* when skewY is -ve deg, it pulls the top right*/
+            transform: skew(0deg, 40deg); 
+        }
+
+        .baz {
+            background-color: rgb(221, 11, 176);
+            /* when skewY is +ve deg, it pulls the top left */
+            /* when skewY is -ve deg, it pulls the top right*/
+            transform: skew(40deg, 0deg); 
         }
     </style>
 </head>
 <body>
-    <div class="foo">Foo </div>
+    <!-- Skew is more like rotation but on 2d axis-->
+
+    <div class="result" id="skew-animation">
+        <p><strong>skew(0deg)</strong>: no distortion</p>
+        <p><strong>skew(10deg)</strong>: subtle horizontal distortion</p>
+        <p><strong>skew(45deg)</strong>: quarter distortion</p>
+        <p><strong>skew(90deg)</strong>: half distortion (invisible)</p>
+        <p><strong>skew(120deg)</strong>: same as -60deg</p>
+        <div id="skewAnimation">Skewing</div>
+    </div>
+
+
+    <div class="common">Original box </div>
+    <div class="common foo">Foo </div>
+    <div class="common bar">Bar </div>
+    <div class="common baz">Baz </div>
+
+    
 </body>
 </html>

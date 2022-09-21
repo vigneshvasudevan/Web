@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        nav {
+            display: flex;
+            gap: 0.5rem;
+          }
+          
+        a[href="#"] {
+            flex: 1;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            /* syntax: transition: <property name> <duration> <delay>; 
+                e.g)
+                    
+                1. Apply transition on 1 properties
+                    transition: margin-right 4s 1s;
+                2. Apply transition on 2 properties
+                    transition: margin-right 4s, color 1s;
+            */
+            transition: all 0.5s ease-out; /*Allows transformation to happen smoothly */
+        }
+          
+        a:hover,
+        a:focus {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .foo, .bar {
+            width: 200px;
+            height: 200px; 
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+        .foo {
+            transition: all 2s ease-out;
+        }
+
+        .bar {
+            transition: border 2s ease-out;
+        }
+
+        .foo:hover {
+            border: 2px solid red;
+        }
+          
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <div class="foo" id="foo"> Click me to resize me, I will resize gradually</div>
+    <div class="foo bar" id="foo"> Click me to resize me, I will resize instantly</div>
+    <script>
+        let foo = document.getElementsByClassName("foo");
+        foo = foo[0];
+        foo.addEventListener("click", (evt) => {
+            evt.target.style.width = "300px";
+            evt.target.style.height = "300px";
+        });
+
+        let bar = document.getElementsByClassName("bar");
+        bar = bar[0];
+        bar.addEventListener("click", (evt) => {
+            evt.target.style.width = "300px";
+            evt.target.style.height = "300px";
+        });
+    </script>
+      
+</body>
+</html>
