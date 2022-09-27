@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex wrap</title>
+    <style>
+        .container1 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid brown;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+            /* By default flex-wrap: nowrap which means container is single line*/
+        }
+        .container1.wrap, .biggerFlexItem {
+            flex-wrap: wrap; /* Flex container will be multi-line*/
+        }
+        .container1.revwrap {
+            flex-wrap: wrap-reverse; 
+        }
+        .flexitem {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+        .biggerFlexItem {
+            width: 300px;
+            height: 300px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Wrapping will happen on the cross axis not the main axis-->
+    <div class="container1"> Container1, items got squeezed(no wrapping) fit the container
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+        <div class="flexitem">Item3</div>
+    </div>
+
+    <div class="container1 wrap"> Container1, items wrapped, spilled elements moved to next position
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+        <div class="flexitem">Item3</div>
+    </div>
+
+    <div class="container1 revwrap"> Container1, items reverse wrapped to fit the container
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+        <div class="flexitem">Item3</div>
+    </div>
+
+
+    <div class="container1 wrap"> Container1, items wrapped, spilled elements moved to next position
+        <div class="biggerFlexItem">bigger Item1 causes element to spillover</div>
+    </div>
+</body>
+</html>

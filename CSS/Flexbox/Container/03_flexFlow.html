@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexFlow</title>
+    <style>
+        .container1 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid brown;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .wrapped {
+            flex-flow: row-reverse wrap-reverse;
+        }
+
+        .flexitem {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Flex-flow is a shorthand property which takes flex-direction and Flex-wrap values.-->
+    
+    <div class="container1"> Container1, no wrap
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+        <div class="flexitem">Item3</div>
+    </div>
+
+    <div class="container1 wrapped"> Container1, wrapped
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+        <div class="flexitem">Item3</div>
+    </div>
+</body>
+</html>

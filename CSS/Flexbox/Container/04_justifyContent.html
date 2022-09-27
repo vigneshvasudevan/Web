@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify items</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 400px;
+            border: 2px solid brown;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+        }
+
+        .flexItem {
+            width: 50px;
+            height: 50px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+        .columnDir {
+            flex-direction: column; /* default value: column */
+        }
+
+        .end {
+            justify-content: flex-end;
+        }
+
+        .center {
+            justify-content: center;
+        }
+
+        .spacebtwn{
+            justify-content: space-between;
+        }
+
+        .spacearound {
+            justify-content: space-around;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Defines how element is placed along in major axis-->
+    <span> stack from major axis(here x-axis) start to end</span>
+    <div class="container"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> stack from major axis(here y-axis) start to end</span>
+    <div class="container columnDir"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> stack from major axis(here x-axis) end to start</span>
+    <div class="container end">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> stack from major axis(here y-axis) end to start</span>
+    <div class="container columnDir end"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+
+    <span> stack center at major axis(here x-axis)</span>
+    <div class="container center">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> leave equal space between items </span>
+    <div class="container spacebtwn">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> leave equal space around items </span>
+    <div class="container spacearound">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+</body>
+</html>

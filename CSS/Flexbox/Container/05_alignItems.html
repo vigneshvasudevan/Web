@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align items</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 400px;
+            border: 2px solid brown;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+            /* Syntax: align-items: Normal | stretch | baseline */
+            align-items: flex-start; /* default value: align-items: flex-start | stretch; */
+        }
+    
+        .flexItem {
+            width: 50px;
+            height: 50px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+        .columnDir {
+            flex-direction: column; /* default value: column */
+        }
+    
+        .end {
+            align-items: flex-end;
+        }
+    
+        .center {
+            align-items: center;
+        }
+
+        .stretch {
+            align-items: stretch;
+        }
+
+        .flexItem1 {
+            width: 50px;
+            /* Do not set height */
+            border: 2px solid blue;
+            margin: 10px;
+        }
+
+        .baseline {
+            align-items: baseline; /* Not all browsers support it */
+        }
+    
+    </style>
+    
+    
+</head>
+<body>
+    <!-- Defines how element is placed along in cross axis-->
+    <span> align from cross axis(here y-axis) start to end</span>
+    <div class="container"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> align from cross axis(here x-axis) start to end</span>
+    <div class="container columnDir"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> align from cross axis(here y-axis) end to start</span>
+    <div class="container end">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> align from cross axis(here x-axis) end to start</span>
+    <div class="container columnDir end"> 
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+
+    <span> align at the center cross axis(here x-axis)</span>
+    <div class="container center">
+        <div class="flexItem">Item1</div>
+        <div class="flexItem">Item2</div>
+        <div class="flexItem">Item3</div>
+    </div>
+
+    <span> stretch items in crossaxis here y-direction</span>
+    <div class="container stretch">
+        <div class="flexItem1">Item1</div>
+        <div class="flexItem1">Item2</div>
+        <div class="flexItem1">Item3</div>
+    </div>
+    <span> Note: During stretch still min-width/height will be respected</span>
+    <br>
+    <br>
+
+    <span> baseline</span>
+    <div class="container baseline">
+        <div class="flexItem1" style="background-color:coral;min-height:30px;">Item1</div>
+        <div class="flexItem1" style="background-color:lightblue;min-height:50px;">Item2</div>
+        <div class="flexItem1" style="background-color:lightgreen;min-height:190px;">Item3 </div>
+    </div>
+
+</body>
+</html>
