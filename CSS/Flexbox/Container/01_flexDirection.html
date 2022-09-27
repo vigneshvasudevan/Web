@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex direction</title>
+    <style>
+        .container1, .container2 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid brown;
+            text-align: center;
+            margin: 10px;
+            display: flex;
+        }
+        .container1.reverse {
+            flex-direction: row-reverse;
+        }
+        .container2 {
+            flex-direction: column; /* default value: column */
+        }
+        .container2.reverse {
+            flex-direction: column-reverse; /* default value: column */
+        }
+        .flexitem {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1"> Container1, place items L->R
+        <div class="flexitem">Item1. <em>Note element got resized</em></div>
+        <div class="flexitem">Item2. <em>Note element got resized</em></div>
+    </div>
+
+    <div class="container1 reverse"> Container place items R->L
+        <div class="flexitem">Item1<em>Note element got resized</em></div>
+        <div class="flexitem">Item2<em>Note element got resized</em></div>
+    </div>
+
+    <div class="container2"> Container place items Top->Bottom
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+    </div>
+
+    <div class="container2 reverse"> Container place items Bottom->Top
+        <div class="flexitem">Item1</div>
+        <div class="flexitem">Item2</div>
+    </div>
+
+</body>
+</html>
