@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex items with positions</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            border: 2px solid brown;
+            text-align: center;
+            display: flex;
+            margin: 20px;
+            position: relative;
+        }
+        .flexitem1 {
+            border: 2px solid blue;
+            margin: 2px;
+            position: relative;
+            top: 20%;
+        }
+        .absPosition {
+            position: absolute;
+            flex : 1 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Few points to remember-->
+    <ol>Few points to remember
+        <li> An absolutely-positioned child of a flex container does not participate in flex layout</li>
+        <li>The static position of an absolutely-positioned child of a flex container is determined such that the child is positioned as if it were the sole flex item in the flex container, assuming both the child and the flex container were fixed-size boxes of their used size.</li>
+    </ol>
+
+
+    <div class="container"> 
+        <div class="flexitem1">Item1 with absolute position</div>
+        <div class="flexitem1" style="text-align:center; top:50%">Item2</div>
+    </div>
+
+    <div class="container"> 
+        <div class="flexitem1 absPosition">Item1 with absolute position</div>
+        <div class="flexitem1" style="text-align:center; top:50%">Item2</div>
+    </div>
+</body>
+</html>
