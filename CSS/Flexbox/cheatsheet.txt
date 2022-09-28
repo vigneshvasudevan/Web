@@ -1,0 +1,50 @@
+Flex Container properties:
+
+It can be broadly be classified into properties which works on 
+    1. main axis
+    2. cross axis
+ 
+
+properties which works on main-axis:
+    1. Flex-direction
+        default value : row
+        row: Items will be arranged L->R
+        row-reverse :  Items will be arranged R->L
+        column:Items will be arranged Top -> Bottom
+        column-reverse :Items will be arranged Bottom -> Top
+
+    2. Justify-Content
+        default value : flex-start
+        flex-start : flex items is justified to the main axis flex-start
+        flex-end : flex items is justified to the main axis flex-end
+        center : flex items is justified to the main axis center
+        space-between : Leave equal space b/w item on the main axis
+        space around : Leave equal space around the item on the main axis
+
+properties which works on cross-axis:
+    1. Flex wrap: 
+        default value: no-wrap
+        no-wrap: flex items will be single row(if main axis is row)/ single column (if main axis is column)
+        wrap: The flex items break into multiple lines if needed from cross-start to cross end
+        wrap-reverse: The flex items break into multiple lines if needed from cross-end to cross start
+
+    2. Align-Items:
+        default value: flex-start stretch
+        flex-start : flex items is justified to the cross axis flex-start
+        flex-end : flex items is justified to the cross axis axis flex-end
+        center : flex items is justified to the cross axis center
+        no-stretch : take only required width/height
+        stretch : to stretch item on the cross-axis
+        baseline : value will align flex items along their content's baseline
+
+
+    3. Align-Content: works only for flex container having multi-line in other words when flex-wrap:wrap.
+        This value determines next line goes to. 
+        
+        default value: start
+        start : Pack items from the start
+        end : Pack items from the end 
+
+
+
+Note: position : absolute/relative/fixed/sticky will still work at flex-items
