@@ -20,11 +20,14 @@
             border: 2px solid blue;
             margin: 10px;
         }
+        .flexitem1 {
+            order: 1;
+        }
         .flexitem2 {
-            order: 2;
+            order: 3;
         }
         .flexitem3 {
-            order: 1;
+            order: 2;
         }
 
     </style>
@@ -35,14 +38,15 @@
     <div class="container"> Container
         <div class="flexitem1">Item1</div>
         <div class="flexitem1">Item2</div>
+        <div class="flexitem1">Item3</div>
     </div>
     
     <div style="color:red"> using order distrupts the keyboard navigation using tab key. Tab key navigation goes by normal document flow not the order</div>
     
-    <span>ordered items</span>
+    <p>ordered items</p>
     <div class="container"> Container
-        <div class="flexitem2">Item1, order = 1</div>
-        <div class="flexitem3">Item2, order = 2</div>
+        <div class="flexitem1">Item1, order = 1</div>
+        <div class="flexitem2">Item2, order = 3</div>
         <div class="flexitem3">Item3, order = 2 </div>
     </div>
     
