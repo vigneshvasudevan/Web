@@ -38,8 +38,8 @@ properties which works on cross-axis:
         baseline : value will align flex items along their content's baseline
 
 
-    3. Align-Content: works only for flex container having multi-line in other words when flex-wrap:wrap.
-        This value determines next line goes to. 
+    3. Align-Content: works only for flex container having multi-line in other words when flex-wrap:wrap or wrap-reverse
+        This value determines where next line goes to. 
         
         default value: start
         start : Pack items from the start
