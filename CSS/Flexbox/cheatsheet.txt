@@ -20,6 +20,7 @@ properties which works on main-axis:
         center : flex items is justified to the main axis center
         space-between : Leave equal space b/w item on the main axis
         space around : Leave equal space around the item on the main axis
+        equal-space : Leave equal space b/w flex items and around the flex item
 
 properties which works on cross-axis:
     1. Flex wrap: 
